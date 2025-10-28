@@ -10,7 +10,7 @@ This calculator is a versatile tool used for math operations accuratly and quick
 
 * [Windows EXE](https://github.com/9623993-prog/Portfolio/blob/main/src/Calculator/windows-amd64.zip)
 * [MacOSX](https://github.com/9623993-prog/Portfolio/blob/main/src/Calculator/macos-aarch64.zip)
-* [Source Code](https://github.com/9623993-prog/Portfolio/tree/main/src/Calculator)
+* [Source Code](https://github.com/9623993-prog/Portfolio/blob/main/src/Calculator/Calculator.pde)
 
 
 ![CalculatorUML.JPEG](https://raw.githubusercontent.com/9623993-prog/Portfolio/refs/heads/main/src/Calculator/CalculatorUML.jpg)
