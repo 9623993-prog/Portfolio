@@ -52,7 +52,74 @@ void draw () {
   }
   updateDisplay();
 }
-void mousePressed() {
+
+void keyReleased() {
+  println("Key:" + key);
+  println("KeyCode:" + keyCode);
+  if (keyCode == 107) {
+    dVal = "0.0";
+    left = false;
+    op = "+";
+  } else if (keyCode == 10) {
+  } else if (keyCode == 45 || keyCode == 109) {
+    dVal = "0.0";
+    op = "-";
+    left = false;
+  }
+  if (keyCode == 45 || keyCode == 97) {
+    if (dVal.length()<8) {
+      if (left == true) {
+        if (dVal.equals("0.0")) {
+          dVal = "1";
+          l = float(dVal);
+        } else {
+          dVal += "1";
+          l = float(dVal);
+        }
+      } else if (left == false) {
+        if (dVal.equals("0.0")) {
+          dVal = "1";
+          r = float(dVal);
+        }
+      }
+    }
+  }
+}
+
+void keyPressed() {
+  println("Key:" + key);
+  println("KeyCode:" + keyCode);
+  if (keyCode == 107) {
+    dVal = "0.0";
+    left = false;
+    op = "+";
+  } else if(keyCode == 109 || keyCode == 45) {
+    dVal = "0.0";
+    left = false;
+    op = "-";
+  } else if (keyCode == 48 || keyCode == 96) {
+    if (dVal.length()<8) {
+      if (left == true) {
+        if (dVal.equals("0.0")) {
+          dVal = "0";
+          l = float(dVal);
+        } else {
+          dVal += "0.0";
+          l = float(dVal);
+        }
+      } else if (!left) {
+        if (dVal.equals("0.0")) {
+          dVal = "0.0";
+          r = float(dVal);
+        } else {
+          dVal += "0.0";
+          r = float(dVal);
+        }
+      }
+    }  
+  }
+}   
+void mouseReleased() {
   for (int i =0; i<buttons.length; i++) {
     if (buttons[i].over && buttons[i].val == '+') {
       dVal = "0.0";
@@ -74,113 +141,113 @@ void mousePressed() {
         dVal = str(l);
       }
     } else  if (buttons[i].over && buttons[i].val == '%') {
-        if (left) {
-          l = l*0.01;
-          dVal = str(l);
+      if (left) {
+        l = l*0.01;
+        dVal = str(l);
+      } else {
+        r = r*0.01;
+        dVal = str(l);
+      }
+    } else  if (buttons[i].over && buttons[i].val == '=') {
+      performCalculation();
+    } else  if (buttons[i].over && buttons[i].val == '±') {
+      if (left) {
+        l = l * -1;
+        dVal = str(l);
+      } else {
+        r = r * -1;
+        dVal = str(l);
+      }
+    } else  if (buttons[i].over && buttons[i].val == '*') {
+      result = 0.0;
+      dVal = "0.0";
+      op = "*";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '/') {
+      result = 0.0;
+      dVal = "0.0";
+      op = "/";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '<') {
+      result = 0.0;
+      dVal = "0.0";
+      op = "<";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '>') {
+      result = 0.0;
+      dVal = "0.0";
+      op = ">";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '-') {
+      l = 0.0;
+      r = 0.0;
+      result = 0.0;
+      dVal = "0.0";
+      op = "-";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '^') {
+      result = 0.0;
+      dVal = "0.0";
+      op = "*";
+      left = false;
+    } else  if (buttons[i].over && buttons[i].val == '.') {
+      if (dVal.contains(".") == false) {
+        dVal += ".";
+      }
+    }
+  }
+  for (int i = 0; i<numButtons.length; i++) {
+    if (dVal.length()<8) {
+      if (numButtons[i].over && left == true) {
+        if (dVal.equals("0.0")) {
+          dVal = str(numButtons[i].val);
+          l = float(dVal);
         } else {
-          r = r*0.01;
-          dVal = str(l);
+          dVal += str(numButtons[i].val);
+          l = float(dVal);
         }
-      } else  if (buttons[i].over && buttons[i].val == '=') {
-        performCalculation();
-      } else  if (buttons[i].over && buttons[i].val == '±') {
-        if (left) {
-          l = l * -1;
-          dVal = str(l);
+      } else if (numButtons[i].over && left == false) {
+        if (dVal.equals("0.0")) {
+          dVal = str(numButtons[i].val);
+          r = float(dVal);
         } else {
-          r = r * -1;
-          dVal = str(l);
-        }
-      } else  if (buttons[i].over && buttons[i].val == '*') {
-        result = 0.0;
-        dVal = "0.0";
-        op = "*";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '/') {
-        result = 0.0;
-        dVal = "0.0";
-        op = "/";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '<') {
-        result = 0.0;
-        dVal = "0.0";
-        op = "<";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '>') {
-        result = 0.0;
-        dVal = "0.0";
-        op = ">";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '-') {
-        l = 0.0;
-        r = 0.0;
-        result = 0.0;
-        dVal = "0.0";
-        op = "-";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '^') {
-        result = 0.0;
-        dVal = "0.0";
-        op = "*";
-        left = false;
-      } else  if (buttons[i].over && buttons[i].val == '.') {
-        if (dVal.contains(".") == false) {
-          dVal += ".";
+          dVal += str(numButtons[i].val);
+          r = float(dVal);
         }
       }
     }
-    for (int i = 0; i<numButtons.length; i++) {
-      if (dVal.length()<8) {
-        if (numButtons[i].over && left == true) {
-          if (dVal.equals("0.0")) {
-            dVal = str(numButtons[i].val);
-            l = float(dVal);
-          } else {
-            dVal += str(numButtons[i].val);
-            l = float(dVal);
-          }
-        } else if (numButtons[i].over && left == false) {
-          if (dVal.equals("0.0")) {
-            dVal = str(numButtons[i].val);
-            r = float(dVal);
-          } else {
-            dVal += str(numButtons[i].val);
-            r = float(dVal);
-          }
-        }
-      }
-    }
-    println("l:" + l);
-    println("r:" + r);
-    println("result:" + result);
-    println("left:" + left);
-    println("op:" + op);
   }
+  println("l:" + l);
+  println("r:" + r);
+  println("result:" + result);
+  println("left:" + left);
+  println("op:" + op);
+}
 
-  void updateDisplay () {
-    rectMode(CENTER);
-    fill(255);
-    rect(115, 40, 240, 60, 10);
+void updateDisplay () {
+  rectMode(CENTER);
+  fill(255);
+  rect(115, 40, 240, 60, 10);
 
-    fill(0);
-    textSize(45);
-    textAlign(RIGHT);
-    text(dVal, 200, 55);
+  fill(0);
+  textSize(45);
+  textAlign(RIGHT);
+  text(dVal, 200, 55);
+}
+
+void performCalculation () {
+  if (op.equals("+")) {
+    result = l + r;
+  } else if (op.equals("-")) {
+    result = l - r;
+  } else if (op.equals("*")) {
+    result = l * r;
+  } else if (op.equals("/")) {
+    result = l / r;
+  } else if (op.equals("^")) {
+    result = pow(l, r);
   }
-
-  void performCalculation () {
-    if (op.equals("+")) {
-      result = l + r;
-    } else if (op.equals("-")) {
-      result = l - r;
-    } else if (op.equals("*")) {
-      result = l * r;
-    } else if (op.equals("/")) {
-      result = l / r;
-    } else if (op.equals("^")) {
-      result = pow(l, r);
-    }
-    dVal = str(result);
-    l = result;
-    left = true;
-  }
+  dVal = str(result);
+  l = result;
+  left = true;
+}
