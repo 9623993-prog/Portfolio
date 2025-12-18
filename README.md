@@ -1,8 +1,8 @@
 # Jack Quinn's Programming Portfolio
 
-## Projects for Semester 1
-
 ## Certifications in Tech - (N/A)
+
+## My Projects from Semester 1:
 
 ### Calculator (2025)
 
