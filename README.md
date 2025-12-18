@@ -1,6 +1,6 @@
 # Jack Quinn's Programming Portfolio
 
-## Certifications in Tech - (N/A)
+### Certifications in Tech - (N/A)
 
 ## My Projects from Semester 1:
 
