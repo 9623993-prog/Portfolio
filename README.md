@@ -24,4 +24,4 @@ This calculator is a tool used for math operations quickly. It helps with basic 
 
 Burning Rubber is our simple yet difficult car game, where you must dodge cones as obstacles and pickup gas cans to keep fuel in your car. A meter displayed in the top left corner displays a guage indicating your fuel remaining. If you hit an obstacle or run out of fuel, you will 'crash' and be forced to restart. Try and get the highest score! Jack's Highest Score : 4,155 | Sam's highest Score : 3,336
 
-![Burning Rubber](https://github.com/9623993-prog/Portfolio/blob/main/images/Racing%20GameUI.png)
+![Burning Rubber](https://github.com/BOBJORGANSAM/The-67-Group/blob/main/docs/Burning%20Rubber%20image.png?raw=true)
