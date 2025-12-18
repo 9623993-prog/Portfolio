@@ -2,7 +2,7 @@
 
 ## Projects for Semester 1
 
-## Certifications (N/A)
+## Certifications in Tech - (N/A)
 
 ### Calculator (2025)
 
