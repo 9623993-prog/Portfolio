@@ -27,3 +27,5 @@ Burning Rubber is our simple yet difficult car game, where you must dodge cones 
 Jack's Highest Score : 4,155 | Sam's highest Score : 3,336
 
 ![Burning Rubber](https://github.com/BOBJORGANSAM/The-67-Group/blob/main/docs/Burning%20Rubber%20image.png?raw=true)
+
+![Burning Rubber Diagram.UML](https://github.com/BOBJORGANSAM/The-67-Group/blob/main/images/Racing%20Game%20Diagram.png?raw=true)
