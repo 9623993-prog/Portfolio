@@ -41,4 +41,4 @@ Jack's Highest Score : 4,155 | Sam's highest Score : 3,336
 
 This was a guided project we completed in class to teach us programs that include 'mouse pressed' features. In this instance, when you right-click with your mouse, a ball appears on screen.
 
-![Bouncing Ball](https://graniteschools.instructure.com/users/3992691/files/182540849/preview?verifier=sLrlhDPT3bqppuB0bq2mQoEXZBTOPdigzADVtAw7)
+![Bouncing Ball]
